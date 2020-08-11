@@ -1,5 +1,6 @@
 package lesson2;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Main {
@@ -10,20 +11,29 @@ public class Main {
         System.out.println("1 - Addition");
         System.out.println("2 - Subtraction");
         System.out.println("3 - Multiplication");
+        System.out.println("4 - Division");
         Scanner scan = new Scanner(System.in);
         int operation = scan.nextInt();
         System.out.println("Enter the first number");
-        int FirstNan = scan.nextInt();
+        double FirstNan = scan.nextInt();
         System.out.println("Enter second number");
-        int SecondNan = scan.nextInt();
-        int result;
+        double SecondNan = scan.nextInt();
+        double result;
+        String text = "";
         if (operation == 1) {
             result = FirstNan + SecondNan;
+            text = "addition";
         } else if (operation == 2) {
             result = FirstNan - SecondNan;
-        } else {
+            text = "subtraction";
+        } else if(operation == 3) {
             result = FirstNan * SecondNan;
+            text = "multiplication";
+        } else {
+            result = FirstNan/SecondNan;
+            text = "division";
         }
-        System.out.println("Result = " + result);
+        DecimalFormat reduction = new DecimalFormat("#.00");
+        System.out.println("Result of "+text + " = " + reduction.format(result));
     }
 }
