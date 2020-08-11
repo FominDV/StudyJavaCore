@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
         System.out.println("Enter the operation");
         System.out.println("1 - Addition");
         System.out.println("2 - Subtraction");
@@ -17,7 +17,13 @@ public class Main {
         System.out.println("Enter second number");
         int SecondNan = scan.nextInt();
         int result;
-        
-
+        if (operation == 1) {
+            result = FirstNan + SecondNan;
+        } else if (operation == 2) {
+            result = FirstNan - SecondNan;
+        } else {
+            result = FirstNan * SecondNan;
+        }
+        System.out.println("Result = " + result);
     }
 }
