@@ -1,14 +1,14 @@
-package lesson3;
-
+package guess;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Your task is to guess the number\nEnter count of numbers");
-        int range = scn.nextInt();
-        int number = (int)(Math.random()*range);
-        playerLevel(range, number);
+        System.out.println("Your task is to guess the number");
+        for (int i = 10; i <=30; i += 10){
+            int number = (int)(Math.random()*i);
+            playerLevel(i, number);
+        }
         scn.close();
     }
     private static Scanner scn = new Scanner(System.in);
