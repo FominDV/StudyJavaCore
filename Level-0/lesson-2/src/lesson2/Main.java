@@ -5,6 +5,14 @@ import java.util.Scanner;
 
 public class Main {
 
+    private static String reduction (double number) {
+        DecimalFormat reduction = new DecimalFormat(".00");
+        String part2 = String.valueOf(reduction.format(number % 1));
+        String part1 = String.valueOf((int)number);
+        String reduct = part1 + part2;
+        return reduct;
+    }
+
     public static void main(String[] args) {
         // write your code here
         System.out.println("Enter the operation");
@@ -33,7 +41,6 @@ public class Main {
             result = FirstNan/SecondNan;
             text = "division";
         }
-        DecimalFormat reduction = new DecimalFormat("#.00");
-        System.out.println("Result of "+text + " = " + reduction.format(result));
+        System.out.println("Result of "+text + " = " + reduction(result));
     }
 }

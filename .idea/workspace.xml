@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fb29f44-4837-4af7-9f2e-c3770972d2ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Level-0/guess the number/.idea/guess the number.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Level-0/guess the number/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Level-0/guess the number/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Level-0/guess the number/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Level-0/guess the number/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Level-0/guess the number/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level-0/lesson-2/src/lesson2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Level-0/lesson-2/src/lesson2/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
