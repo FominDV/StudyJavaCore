@@ -5,14 +5,14 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Your task is to guess the number");
-        for (int i = 10; i <=30; i += 10){
-            int number = (int)(Math.random()*i);
-            playerLevel(i, number);
-        }
+        for (int i = 10; i <=30; i += 10) playerLevel(i);
+        System.out.println("You are the best! \n WIN!!!!");
         scn.close();
     }
     private static Scanner scn = new Scanner(System.in);
-    private static void playerLevel (int range, int number) {
+    private static void playerLevel (int range) {
+        int number = (int)(Math.random()*range);
+        System.out.println("Start level № " + (range/10));
         while(true){
             System.out.println("Enter your number from 0 to " + (range-1));
             int inputNumber = scn.nextInt();
