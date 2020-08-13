@@ -3,6 +3,8 @@ package catchDrops;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 
 public class GameWindow extends JFrame {
@@ -15,6 +17,7 @@ public class GameWindow extends JFrame {
     private static float dropY = -100;
     private static float dropVY = 200;
     private static float dropVX = 130;
+    private  static int score;
 
     public static void main(String[] args) throws IOException {
         background = ImageIO.read(GameWindow.class.getResourceAsStream("background.png"));
@@ -27,6 +30,23 @@ public class GameWindow extends JFrame {
         GW.setResizable(false); //Forbidding window changes
         time = System.nanoTime();
         gameField GF = new gameField();
+        GF.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                int x = e.getX();
+                int y = e.getY();
+                float dropX2 = dropX  drop.getWidth(null);
+                float dropY2 = dropY + drop.getHeight(null);
+                boolean is_drop = x >= dropX && x <= dropX2 && y >= dropY && y <= dropY2;
+                if(is_drop){
+                    dropY = -100;
+                    dropX = (int) (Math.random()*(GF.getWidth() - drop.getWidth(null)));
+                    dropVY += 20;
+                    score++;
+                    GW.setTitle("Score: " + score);
+                }
+            }
+        });
         GW.add(GF);
         GW.setVisible(true);//make it visible
 
@@ -39,10 +59,10 @@ public class GameWindow extends JFrame {
         float delta_time = (current_time - time) * 0.000000001f;
         time = current_time;
         dropY += dropVY * delta_time;
-        dropX += dropVX * delta_time;
+        //dropX += dropVX * delta_time;
         g.drawImage(background, 0,0,null);
         g.drawImage(drop,(int) dropX,(int) dropY,null);
-        //g.drawImage(game_over, 280,120,null);
+        if(dropY>GW.getHeight()) g.drawImage(game_over, 280,120,null);
 
     }
 
