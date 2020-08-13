@@ -13,7 +13,8 @@ public class GameWindow extends JFrame {
     private static GameWindow GW;
     private static float dropX = 200;
     private static float dropY = -100;
-    private static float dropV = 200;
+    private static float dropVY = 200;
+    private static float dropVX = 130;
 
     public static void main(String[] args) throws IOException {
         background = ImageIO.read(GameWindow.class.getResourceAsStream("background.png"));
@@ -37,7 +38,8 @@ public class GameWindow extends JFrame {
         long current_time = System.nanoTime();
         float delta_time = (current_time - time) * 0.000000001f;
         time = current_time;
-        dropY += dropV * delta_time;
+        dropY += dropVY * delta_time;
+        dropX += dropVX * delta_time;
         g.drawImage(background, 0,0,null);
         g.drawImage(drop,(int) dropX,(int) dropY,null);
         //g.drawImage(game_over, 280,120,null);
