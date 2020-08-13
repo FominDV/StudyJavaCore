@@ -15,8 +15,8 @@ public class GameWindow extends JFrame {
     private static GameWindow GW;
     private static float dropX = 200;
     private static float dropY = -100;
-    private static float dropVY = 200;
-    private static float dropVX = 130;
+    private static float dropVY = 150;
+    private static float dropVX = 0;
     private  static int score;
 
     public static void main(String[] args) throws IOException {
@@ -35,14 +35,17 @@ public class GameWindow extends JFrame {
             public void mousePressed(MouseEvent e) {
                 int x = e.getX();
                 int y = e.getY();
-                float dropX2 = dropX  drop.getWidth(null);
+                float dropX2 = dropX + drop.getWidth(null);
                 float dropY2 = dropY + drop.getHeight(null);
                 boolean is_drop = x >= dropX && x <= dropX2 && y >= dropY && y <= dropY2;
                 if(is_drop){
                     dropY = -100;
                     dropX = (int) (Math.random()*(GF.getWidth() - drop.getWidth(null)));
-                    dropVY += 20;
+                    dropVY += 4;
                     score++;
+                    if(dropVX < 0) dropVX *= (-1);
+                    if(score > 10) dropVX += 8;
+                    if(dropX > (GF.getWidth()/2)) dropVX *= (-1);
                     GW.setTitle("Score: " + score);
                 }
             }
@@ -59,7 +62,7 @@ public class GameWindow extends JFrame {
         float delta_time = (current_time - time) * 0.000000001f;
         time = current_time;
         dropY += dropVY * delta_time;
-        //dropX += dropVX * delta_time;
+        dropX += dropVX * delta_time;
         g.drawImage(background, 0,0,null);
         g.drawImage(drop,(int) dropX,(int) dropY,null);
         if(dropY>GW.getHeight()) g.drawImage(game_over, 280,120,null);
