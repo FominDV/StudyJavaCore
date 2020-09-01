@@ -1,5 +1,6 @@
 package ru.test.fomin.testing;
 
+import javax.sound.midi.Soundbank;
 import java.util.Arrays;
 
 public class TestOwn {
@@ -30,10 +31,38 @@ public class TestOwn {
         System.out.println(second.length);
         System.out.println(Arrays.toString(second));
         System.out.println(Arrays.binarySearch(second, 25));
-        String str ="comedy club";
-        System.out.println("length = "+str.length());
+        String str = "comedy club";
+        System.out.println("length = " + str.length());
         String[] parts = str.split(" ");
         System.out.println(Arrays.toString(parts));
-        
+
+        MyClass MyClass = new MyClass();
+        ChildMyClass Child = new ChildMyClass();
+        MyClass.showNumber();
+        MyClass obj = new MyClass();
+        obj.setNumber(7);
+        obj.showNumber();
+        MyClass.showNumber();
+        Child.showNumber();
+    }
+}
+
+class MyClass {
+    static int number = 5;
+
+    static void setNumber(int numberInput) {
+        number = numberInput;
+    }
+
+    void showNumber() {
+        System.out.println("Parent:" + number);
+    }
+}
+
+class ChildMyClass extends MyClass {
+    @Override
+    void showNumber() {
+        super.showNumber();
+        System.out.println("Child:" + (number * 2));
     }
 }
