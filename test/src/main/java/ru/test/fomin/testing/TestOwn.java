@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 public class TestOwn {
     public static void main(String[] args) {
+
         int[] first = {10, 20, 30, 40};
         int[] second = new int[6];
         second = first;
@@ -14,12 +15,15 @@ public class TestOwn {
         for (int value : arr) {
             System.out.println(value);
         }
-        int[][] arrDouble = new int[3][4];
+        int[][] arrDouble = new int[3][10];
         for (int i = 0; i < arrDouble.length; i++) {
             for (int j = 0; j < arrDouble[0].length; j++) {
                 arrDouble[i][j] = i;
             }
         }
+        
+        for(int i=0; i< arrDouble.length; i++) System.out.println(Arrays.toString(arrDouble[i]));
+
         for (int[] value1 : arrDouble) {
             for (int value2 : value1) {
                 System.out.println(value2);
