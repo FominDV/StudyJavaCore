@@ -21,6 +21,8 @@ public class TestOwn {
                 arrDouble[i][j] = i;
             }
         }
+
+
         
         for(int i=0; i< arrDouble.length; i++) System.out.println(Arrays.toString(arrDouble[i]));
 
