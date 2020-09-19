@@ -42,33 +42,33 @@ public class TestOwn {
         String[] parts = str.split(" ");
         System.out.println(Arrays.toString(parts));
 
-        MyClass MyClass = new MyClass();
+
         ChildMyClass Child = new ChildMyClass();
-        MyClass.showNumber();
-        MyClass obj = new MyClass();
-        obj.setNumber(7);
-        obj.showNumber();
-        MyClass.showNumber();
+
+
+
         Child.showNumber();
     }
 }
 
-class MyClass {
-    static int number = 5;
+interface MyClass {
+    static final int number = 5;
 
-    static void setNumber(int numberInput) {
-        number = numberInput;
-    }
+    void setNumber(int numberInput) ;
 
-    void showNumber() {
-        System.out.println("Parent:" + number);
-    }
+
+
+    void showNumber() ;
 }
 
-class ChildMyClass extends MyClass {
-    @Override
-    void showNumber() {
-        super.showNumber();
+class ChildMyClass implements MyClass {
+
+    public void setNumber(int numberInput) {
+
+    }
+    public void showNumber() {
+
+
         System.out.println("Child:" + (number * 2));
     }
 }
