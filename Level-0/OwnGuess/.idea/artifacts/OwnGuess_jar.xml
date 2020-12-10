@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="OwnGuess:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/OwnGuess_jar</output-path>
+    <root id="archive" name="OwnGuess.jar">
+      <element id="module-output" name="OwnGuess" />
+    </root>
+  </artifact>
+</component>
