@@ -1,3 +1,5 @@
+import java.nio.charset.StandardCharsets;
+
 public class Test3 {
     public static void main(String[] args) {
         //a=7
@@ -32,6 +34,39 @@ public class Test3 {
             }
         }
 
+        String s = new String(new byte[]{0, 65, 0, 66}, StandardCharsets.UTF_16);
+        String as = "fa";
+        as.toUpperCase();
+        System.out.println(as);
+        int[] arr = new int[10];
+        int leng = arr.length;
+        byte by = 127;
+        by++;
+        System.out.println(by);
+        Cat cat1 = new Cat("1");
+        Cat cat2 = new Cat("2");
+        System.out.println(cat1.getName() + " " + cat2.getName());
+    }
 
+    static boolean is() {
+        return Integer.valueOf("10") < 11;
+    }
+
+    Boolean a = true;
+
+    public static void main() {
+
+    }
+
+    public static class Cat {
+        private String name;
+
+        public Cat(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
     }
 }
