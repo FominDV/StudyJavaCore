@@ -46,6 +46,9 @@ public class Test3 {
         Cat cat1 = new Cat("1");
         Cat cat2 = new Cat("2");
         System.out.println(cat1.getName() + " " + cat2.getName());
+        short sh=2;
+        returnMessageShort(2);
+        new Cat();
     }
 
     static boolean is() {
@@ -64,9 +67,20 @@ public class Test3 {
         public Cat(String name) {
             this.name = name;
         }
+        public Cat(){
+            this("Barsick");
+            System.out.println(getName());
+        }
 
         public String getName() {
             return name;
         }
+
+    }
+    static void returnMessageShort(short x){
+        System.out.println("short");
+    }
+    static void returnMessageShort(int x){
+        System.out.println("int");
     }
 }
