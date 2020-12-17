@@ -1,6 +1,7 @@
 import static java.lang.Math.*;
 
 public class test4 {
+
     public static void main(String[] args) {
         printArray(11, "12", "ga");
         for (Money money : Money.values()) money.printCost();
@@ -28,4 +29,3 @@ static void f() {
             System.out.println("B");
         }
     }
-
