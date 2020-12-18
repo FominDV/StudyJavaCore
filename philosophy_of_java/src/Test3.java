@@ -2,6 +2,18 @@ import java.nio.charset.StandardCharsets;
 
 public class Test3 {
     public static void main(String[] args) {
+class s implements Inter.A{
+
+    @Override
+    public void f() {
+        System.out.println("A");
+    }
+}
+new s().f();
+Inter.A ai=new Inter().getAr();
+ai.f();
+
+
 
         //a=7
         long a = 07777777777770L;
