@@ -1,19 +1,14 @@
 package FactoryMethod;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
 public class PlayingDice {
    static void PlayGames(PlayFactory factory){
-        Play play=factory.getPlay();
-        play.toss();
+       factory.getPlay().toss();
     }
     public static void main(String[] args) {
-       PlayGames(new DiceFactory());
-       PlayGames(new CoinFactory());
+       PlayGames(Dice.factory);
+       PlayGames(Coin.factory);
     }
 }
 
@@ -25,30 +20,30 @@ interface PlayFactory {
     Play getPlay();
 }
 
-class dice implements Play {
+class Dice implements Play {
     @Override
     public void toss() {
         System.out.println("Dice: "+(new Random().nextInt(5) + 1));
     }
-
+    static PlayFactory factory=new PlayFactory(){
+        @Override
+      public Play  getPlay(){
+            return new Dice();
+        }
+    };
 }
 
-class coin implements Play {
+class Coin implements Play {
     @Override
     public void toss() {
         System.out.println("Coin: "+(new Random().nextInt(2) + 1));
     }
+    static PlayFactory factory=new PlayFactory(){
+        @Override
+        public Play getPlay(){
+            return new Coin();
+        }
+    };
 }
-class DiceFactory implements PlayFactory{
-    @Override
-    public Play getPlay() {
-        return new dice();
-    }
-}
-class CoinFactory implements PlayFactory{
-    @Override
-    public Play getPlay() {
-        return new coin();
-    }
-}
+
 
