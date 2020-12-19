@@ -1,19 +1,34 @@
 public class Inter {
-    Ar ar;
+ private    Ar ar;
     interface A {
-        void f();
+        void f(int i);
     }
     Inter(){
-     ar=new Ar();
+     ar=new Ar(0);
     }
 Ar getAr(){
      return ar;
 }
- private class Ar implements A {
+static class Ar implements A {
 
-        @Override
-        public void f() {
-            System.out.println("A");
+      static   int i;
+        Ar(int i){
+            this.i=i;
         }
+        @Override
+        public void f(int i){
+
+        }
+        public static void f1() {
+            System.out.println("A"+i);
+        }
+    }
+ private  void print(){
+        System.out.println("sssss");
+    }
+    class B{
+    void   action(){
+        print();
+    }
     }
 }

@@ -5,13 +5,19 @@ public class Test3 {
 class s implements Inter.A{
 
     @Override
-    public void f() {
+    public void f(int i) {
         System.out.println("A");
     }
 }
-new s().f();
-Inter.A ai=new Inter().getAr();
-ai.f();
+new s().f(2);
+Inter inter=new Inter();
+Inter.Ar ai=new Inter.Ar(1);
+Inter.A ai2=inter.getAr();
+Inter.Ar.f1();
+ai.f1();
+ai2.f(1);
+//!inter.print();
+inter.new B().action();
 
 
 
