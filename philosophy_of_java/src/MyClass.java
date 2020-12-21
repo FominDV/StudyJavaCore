@@ -1,9 +1,9 @@
 interface MyInterface {
     void execute();
 
-    default void print() {
-        System.out.println("FOO");
-    }
+//  default void print() {
+//        System.out.println("FOO");
+//    }
 }
 
 public class MyClass {
@@ -11,9 +11,14 @@ public class MyClass {
         System.out.println("Bar");
     }
 public void go(){
-        MyInterface mi=()-> print();
+        MyInterface mi=new MyInterface() {
+            @Override
+            public void execute() {
+              print();
+            }
+        };
         mi.execute();
-        mi.print();
+        
 }
 
     public static void main(String[] args) {
