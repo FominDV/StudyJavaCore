@@ -1,8 +1,11 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
-public class Test7 extends WithInner.Inner {
+class Test7 extends WithInner.Inner {
     public Test7(WithInner wi){wi.super();}
+
 
     public static void main(String[] args) {
         ArrayList<? super Number> list=new ArrayList<>();

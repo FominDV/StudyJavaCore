@@ -37,7 +37,7 @@ for(int i=0;i<10;i++) map.put(i,priorityQueue.remove());
         for(Object e: list1) System.out.println(e);
         System.out.println(list1.size());
         System.out.println(list1.get(0).getClass().getSimpleName());
-        
+
     }
 }
 
