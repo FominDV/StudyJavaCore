@@ -4,7 +4,9 @@ public class GlassWord {
     public static void main(String[] args) {
         Scanner read=new Scanner(System.in);
         System.out.println("Insert the word:");
-        System.out.println("This word is glass: "+isGlassWord(read.next()));
+      String  word=read.next();
+        System.out.println("This word is glass: "+isGlassWord(word));
+        isGlassWord2(word);
     }
     static boolean isGlassWord(String word){
         for(int i=0;i<word.length()/2;i++){
@@ -13,11 +15,8 @@ public class GlassWord {
         return true;
     }
     static boolean isGlassWord2(String word){
-        int i=0;
-        while (i<word.length()/2){
-            if(word.charAt(i)!=word.charAt(word.length()-1-i)) return false;
-            i++;
-        }
+      int value= word.compareTo("q");
+      System.out.println("value: "+value);
         return true;
     }
 }
