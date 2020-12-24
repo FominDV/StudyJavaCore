@@ -7,21 +7,31 @@ import java.util.Arrays;
 
 public class StreamTest {
     public static void main(String[] args) {
+        try (OutputStream outo = new FileOutputStream("save.txt");
+        InputStream into=new FileInputStream("stream_test.txt")) {
+            byte[] array=new byte[256];
+            int read=0;
+            while ((read=into.read(array))>0){
+                outo.write(array,0,read);
+            }
+        }catch (IOException e){
+
+        }
         String java = "привет";
         char j = 'j';
         byte[] arr = java.getBytes();
         System.out.println(new String(arr));
         try (DataOutputStream out = new DataOutputStream(new FileOutputStream("stream_test.txt"))) {
             System.out.println(arr.length);
-            out.writeBytes(new String(arr));
+            out.write(arr);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         System.out.println("read:");
-        try (InputStream in = new FileInputStream(new File("stream_test.txt"))) {
+        try (InputStream in = new FileInputStream("stream_test.txt")) {
             int counterForWhile = 0;
-            byte[] arr1 = new byte[10];
+            byte[] arr1 = new byte[12];
             in.read(arr1);
             for (int i = 0; i < arr1.length; i++) {
                 System.out.println(counterForWhile + ": " + arr1[i]);
