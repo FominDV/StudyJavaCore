@@ -10,6 +10,6 @@ public class Testing {
     static void error(){
         throw new Error();
     }
-    JTextArea
+
 }
 

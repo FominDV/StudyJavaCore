@@ -7,6 +7,8 @@ import java.util.regex.Pattern;
 
 public class RegularTest {
     public static void main(String[] args) {
+        String test="Ivanushka3?";
+        System.out.println(test.matches(".*?[<>\\\\\\/\\*\\?\\|\"\\:].*?"));
         StringBuffer s=new StringBuffer();
         Pattern pattern=Pattern.compile("l");
 

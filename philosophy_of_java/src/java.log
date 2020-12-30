@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-12-30T03:07:38</date>
+  <millis>1609286858399</millis>
+  <sequence>0</sequence>
+  <logger>LogTest</logger>
+  <level>FINE</level>
+  <class>LogTest</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>dfine</message>
+</record>
+<record>
+  <date>2020-12-30T03:07:38</date>
+  <millis>1609286858433</millis>
+  <sequence>1</sequence>
+  <logger>LogTest</logger>
+  <level>INFO</level>
+  <class>LogTest</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>information</message>
+</record>
+<record>
+  <date>2020-12-30T03:07:38</date>
+  <millis>1609286858434</millis>
+  <sequence>2</sequence>
+  <logger>LogTest</logger>
+  <level>WARNING</level>
+  <class>LogTest</class>
+  <method>method</method>
+  <thread>1</thread>
+  <message>ddd</message>
+  <exception>
+    <message>java.lang.RuntimeException</message>
+    <frame>
+      <class>LogTest</class>
+      <method>method</method>
+      <line>25</line>
+    </frame>
+    <frame>
+      <class>LogTest</class>
+      <method>main</method>
+      <line>21</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2020-12-30T03:07:38</date>
+  <millis>1609286858435</millis>
+  <sequence>3</sequence>
+  <logger>LogTest</logger>
+  <level>INFO</level>
+  <class>LogTest</class>
+  <method>method</method>
+  <thread>1</thread>
+  <message>dddd</message>
+</record>
+</log>
