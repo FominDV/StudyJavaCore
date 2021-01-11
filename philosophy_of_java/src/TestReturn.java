@@ -5,23 +5,27 @@ public class TestReturn {
     }
 
     private static String getEditedStringTemplateValue(String inputComponentHtml) {
-        StringBuffer stringBuffer = new StringBuffer(inputComponentHtml);
-        char charOfStringBuffer;
-        int lengthOfStringBuffer = stringBuffer.length();
+        StringBuilder stringBuilder = new StringBuilder(inputComponentHtml);
+        int lengthOfStringBuffer = stringBuilder.length();
         for (int i = 0; i < lengthOfStringBuffer; i++) {
-            charOfStringBuffer = stringBuffer.charAt(i);
-            if (charOfStringBuffer == '\"') stringBuffer.setCharAt(i, '\'');
-            else if (charOfStringBuffer == '\n') {
-                stringBuffer.deleteCharAt(i);
-                i--;
-                lengthOfStringBuffer--;
-            } else if (i != stringBuffer.length() - 1 && charOfStringBuffer == '[' && stringBuffer.charAt(i + 1) == ']') {
-                stringBuffer.setCharAt(i, '[');
-                stringBuffer.setCharAt(i + 1, ']');
-                i++;
+            switch (stringBuilder.charAt(i)) {
+                case '\"':
+                    stringBuilder.setCharAt(i, '\'');
+                    break;
+                case '\n':
+                    stringBuilder.deleteCharAt(i);
+                    i--;
+                    lengthOfStringBuffer--;
+                    break;
+                case '[':
+                    if (i != lengthOfStringBuffer - 1 && stringBuilder.charAt(i + 1) == ']') {
+                        stringBuilder.setCharAt(i, '{');
+                        stringBuilder.setCharAt(i + 1, '}');
+                        i++;
+                    }
             }
         }
-        return stringBuffer.toString();
+        return stringBuilder.toString();
     }
 //return inputComponentHtml.replaceAll("\"", "'").replaceAll("\n", "").replace("[]", "{}");
 }
