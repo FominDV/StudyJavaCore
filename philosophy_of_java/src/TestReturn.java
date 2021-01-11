@@ -1,7 +1,15 @@
+import java.util.Scanner;
+
 public class TestReturn {
     public static void main(String[] args) {
-        String s = "";
+        String s = "dfffffffffffffffffffffffffffffffffffffffffffffffffffffffvccccccccccccccccccccccccccccedfffffffffffffff''''''''''''''''''''''''''''''''''dfffffffffffffffffff\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"[[][][][][][][sddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd";
+        long start;
+        start=System.currentTimeMillis();
         System.out.println(getEditedStringTemplateValue(s));
+        System.out.println(System.currentTimeMillis()-start);
+        start=System.currentTimeMillis();
+        System.out.println(s.replaceAll("\"", "'").replaceAll("\n", "").replace("[]", "{}"));
+        System.out.println(System.currentTimeMillis()-start);
     }
 
     private static String getEditedStringTemplateValue(String inputComponentHtml) {
@@ -27,6 +35,5 @@ public class TestReturn {
         }
         return stringBuilder.toString();
     }
-//return inputComponentHtml.replaceAll("\"", "'").replaceAll("\n", "").replace("[]", "{}");
 }
 
