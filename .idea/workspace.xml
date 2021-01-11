@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7fb29f44-4837-4af7-9f2e-c3770972d2ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/philosophy_of_java/out/production/philosophy_of_java/RegularTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/philosophy_of_java/out/production/philosophy_of_java/RegularTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/philosophy_of_java/out/production/philosophy_of_java/Testing.class" beforeDir="false" afterPath="$PROJECT_DIR$/philosophy_of_java/out/production/philosophy_of_java/Testing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/philosophy_of_java/src/RegularTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/philosophy_of_java/src/RegularTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/philosophy_of_java/src/Testing.java" beforeDir="false" afterPath="$PROJECT_DIR$/philosophy_of_java/src/Testing.java" afterDir="false" />
-    </list>
+    <list default="true" id="7fb29f44-4837-4af7-9f2e-c3770972d2ba" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +11,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1g09sM2afGlKDQRn6iGRYyaql2e" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -36,6 +32,7 @@
       <option name="presentableId" value="Default" />
       <updated>1597240848901</updated>
       <workItem from="1609208706349" duration="45000" />
+      <workItem from="1610371283847" duration="20000" />
     </task>
     <servers />
   </component>
