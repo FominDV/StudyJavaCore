@@ -66,8 +66,7 @@ public class TestReturn {
                     break;
                 case '[':
                     if (i != length - 1 && inputComponentHtml.charAt(i + 1) == ']') {
-                        stringBuilder.append('{');
-                        stringBuilder.append('}');
+                        stringBuilder.append("{}");
                         i++;
                     } else stringBuilder.append('[');
                     break;
@@ -119,17 +118,17 @@ public class TestReturn {
                 case '\"':
                     chars[j]='\'';
                     break;
-                case '[':
-                    chars[j]='{';
-                    if (i != length - 1 && inputComponentHtml.charAt(i+1) == ']') {
-                        chars[++j]='}';
-                        i++;
-                    }
-                    break;
                 case '\n':
                     j--;
                     countOfNull++;
                     break;
+                case '[':
+                    if (i != length - 1 && inputComponentHtml.charAt(i+1) == ']') {
+                        chars[j]='{';
+                        chars[++j]='}';
+                        i++;
+                        break;
+                    }
                 default:
                     chars[j]=currentChar;
             }
