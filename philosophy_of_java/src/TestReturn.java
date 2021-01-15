@@ -35,11 +35,12 @@ public class TestReturn {
 //        // System.out.println(getEditedStringTemplateValue4("fsfsfs\nsds[[[]]sds\"ccs["));
        System.out.println("4: " + (System.currentTimeMillis() - start));
     //   System.out.println("argument: " + "dfd\"\'[]\n][[][]{}\"\'\n[]");
-       //System.out.println("result: " + getEditedStringTemplateValue5("dfd\"\'[]\n][[][]{}\"\'\n[]"));
+        String a=getEditedStringTemplateValue3("\n\n\n");
+       System.out.println("result: " + getEditedStringTemplateValue3("\n\n\n"));
 
         start = System.currentTimeMillis();
-       // System.out.println(getEditedStringTemplateValue5(s).equals(s.replaceAll("\"", "'").replaceAll("\n", "").replace("[]", "{}")));
-        getEditedStringTemplateValue5(s);
+        System.out.println(getEditedStringTemplateValue3(s).equals(s.replaceAll("\"", "'").replaceAll("\n", "").replace("[]", "{}")));
+    //    getEditedStringTemplateValue5(s);
         System.out.println("5: " + (System.currentTimeMillis() - start));
     }
 
@@ -158,6 +159,7 @@ public class TestReturn {
                     : inputComponentHtml.substring(i * countOfSymbolsForPart);
             converterThreadArray[i] = new ConverterForPartOfInputComponentHtmlThread(partOfInputComponentHtml);
             converterThreadArray[i].start();
+           
         }
 
         for (ConverterForPartOfInputComponentHtmlThread converterThread : converterThreadArray) {
