@@ -1,5 +1,9 @@
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class CastTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 //        float floatPi = 22/7f;
 //        float floatPiCast =  (float) (22f/7);
 //        System.out.println("floatPi " + floatPi + " floatCastPi " + floatPiCast);
@@ -9,14 +13,12 @@ public class CastTest {
 //        double doublePi = (double) 22/7;
 //        System.out.println("doublePi " + doublePi);
         //////////////////////////////////////
-        char charValue = '#';
-        char charValueByte = 13;
-        char charValueUnicode = '\uabcd';
-        System.out.println("charValue " + charValue + " charValueByte " + charValueByte + " charValueUnicode " + charValueUnicode);
+        char letter;
+        DataInputStream in=new DataInputStream(System.in);
+        do {
+            System.out.println("Inter dot for exit");
+            letter = in.readChar();
 
-        char charValue1 = '#';
-        char charValueByte1 = 11;
-        char charValueUnicode1 = '\uabcd';
-       System.out.println("charValue1 " + charValue1 + " charValueByte1 " + charValueByte1 + " charValueUnicode1 " + charValueUnicode1);
+        } while (letter != '.');
     }
 }
