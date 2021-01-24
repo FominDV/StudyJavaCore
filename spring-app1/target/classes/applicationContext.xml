@@ -1,15 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans  xmlns="http://www.springframework.org/schema/beans"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:context="http://www.springframework.org/schema/context"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
-
+<!--<beans  xmlns="http://www.springframework.org/schema/beans"-->
+<!--        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--        xmlns:context="http://www.springframework.org/schema/context"-->
+<!--        xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+<!--        http://www.springframework.org/schema/beans/spring-beans.xsd-->
+<!--        http://www.springframework.org/schema/context-->
+<!--        http://www.springframework.org/schema/context/spring-context.xsd">-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="musicPlayer.properties"/>
     <bean id="testBean"
           class="ru.fomin.springcourse.TestBean">
         <constructor-arg value="Neil"/>
     </bean>
-
+    <bean id="musicBean"
+          class="ru.fomin.springcourse.ClassicalMusic">
+    </bean>
+    <bean id="metalBean"
+          class="ru.fomin.springcourse.MetalMusic"/>
+    <bean id="rockBean"
+          class="ru.fomin.springcourse.RockMusic"/>
+    <bean id="musicList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="musicBean" />
+                <ref bean="metalBean" />
+                <ref bean="rockBean"/>
+            </list>
+        </constructor-arg>
+    </bean>
+    <bean id="musicPlayer"
+          class="ru.fomin.springcourse.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
+    </bean>
+    <bean id="musicPlayer0"
+          class="ru.fomin.springcourse.MusicPlayer"
+    scope="prototype">
+        <property name="name" value="layer 0"/>
+        <property name="volume" value="150"/>
+        <property name="music" ref="musicBean"/>
+        <property name="listMusic" ref="musicList"/>
+    </bean>
+    <bean id="musicPlayerFile"
+          class="ru.fomin.springcourse.MusicPlayer">
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
+    </bean>
 </beans>
