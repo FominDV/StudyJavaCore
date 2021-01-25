@@ -19,12 +19,20 @@
         <constructor-arg value="Neil"/>
     </bean>
     <bean id="musicBean"
-          class="ru.fomin.springcourse.ClassicalMusic">
+          class="ru.fomin.springcourse.ClassicalMusic"
+    init-method="privateInit"
+    destroy-method="doDestroy"
+    scope="singleton">
     </bean>
     <bean id="metalBean"
-          class="ru.fomin.springcourse.MetalMusic"/>
+          class="ru.fomin.springcourse.MetalMusic"
+          init-method="doInit"
+          destroy-method="doDestroy"/>
     <bean id="rockBean"
-          class="ru.fomin.springcourse.RockMusic"/>
+          class="ru.fomin.springcourse.RockMusic"
+          init-method="doInit"
+          destroy-method="doDestroy"
+    factory-method="getRockMusic"/>
     <bean id="musicList" class="java.util.ArrayList">
         <constructor-arg>
             <list>
