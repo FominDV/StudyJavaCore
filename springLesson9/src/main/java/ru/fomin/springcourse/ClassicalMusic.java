@@ -3,8 +3,10 @@ package ru.fomin.springcourse;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component("someClassicMusic")
-@Scope("prototype")
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+
 public class ClassicalMusic implements Music, Music2 {
     private String[] songs = {"Simphony", "Bethowen", "Mothart"};
 
@@ -13,7 +15,7 @@ public class ClassicalMusic implements Music, Music2 {
         return "Simphony";
     }
 
-
+@PostConstruct
     private void privateInit() {
         System.out.println("privateInit");
 
@@ -24,7 +26,7 @@ public class ClassicalMusic implements Music, Music2 {
 //        }
     }
 
-
+@PreDestroy
     public void doDestroy1() {
         System.out.println("destroy-method of " + getClass().getSimpleName());
     }

@@ -3,11 +3,10 @@ package ru.fomin.springcourse;
 
 import org.springframework.stereotype.Component;
 
-@Component("rockMusic")
+@Component
 public class RockMusic implements Music,Music2 {
     private String[] songs={"AC/DC","King and Joker","Aria"};
     private RockMusic() {
-        System.out.println("default constructor");
     }
 
     public static RockMusic getRockMusic() {

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-@Component
+
 public class MusicPlayer {
     private String name;
     @Value("${musicPlayer.volume}")
@@ -37,8 +37,8 @@ public class MusicPlayer {
 //    }
 
     //IoC
-    @Autowired
-    public MusicPlayer( @Qualifier("someClassicMusic")Music music) {
+
+    public MusicPlayer( Music music) {
         this.music = music;
     }
 
