@@ -1,0 +1,18 @@
+<html xmlns:wicket="http://wicket.sourceforge.net/">
+<head>
+    <title>Выбор цвета</title>
+</head>
+<body>
+<form wicket:id="form">
+    Ваш предыдущий выбор: <span wicket:id="colorLabel">нет</span><br/>
+    Выберите цвет:
+    <select wicket:id="color">
+        <option>Красный</option>
+        <option>Желтый</option>
+        <option>Зеленый</option>
+    </select>
+    <input wicket:id="submitButton" type="submit" value="Выбор"/><br/>
+    <a wicket:id="selectLink" href="#">Выход</a>
+</form>
+</body>
+</html>
